@@ -18,6 +18,7 @@ class Show < ActiveRecord::Base
       if show.rating == self.lowest_rating
         return show
       end 
+    end 
     Show.where("rating = ?", self.lowest_rating)
   end
   
