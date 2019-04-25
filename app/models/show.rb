@@ -15,7 +15,9 @@ class Show < ActiveRecord::Base
   
   def self.least_popular_show
     Show.each do |show|
-      if self.
+      if show.rating == self.lowest_rating
+        return show
+      end 
     Show.where("rating = ?", self.lowest_rating)
   end
   
